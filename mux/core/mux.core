@@ -54,26 +54,26 @@ filesets:
   rtl:
     file_type: systemVerilogSource
     files:
-      - solutions/mux/hdl/mux.sv
+      - mux/hdl/mux.sv
 
   cocotb:
     files:
-      - solutions/mux/cocotb/test_mux.py : {file_type : user, copyto: .}
+      - mux/cocotb/test_mux.py : {file_type : user, copyto: .}
     depend:
       - vlog_tb_utils
 
   basys3_constraints:
     file_type: xdc
     files:
-      - solutions/mux/constraints/basys3_top.xdc
+      - mux/constraints/basys3_top.xdc
  
   tang_nano9k_constraints:
     files:
-      - solutions/mux/constraints/tang_nano_9k.cst : {file_type : CST}
-      - solutions/mux/constraints/tang_nano_9k.sdc : {file_type : SDC}
+      - mux/constraints/tang_nano_9k.cst : {file_type : CST}
+      - mux/constraints/tang_nano_9k.sdc : {file_type : SDC}
 
 provider:
   name: github
   user: germancq
-  repo: microcredencial-fusesoc
+  repo: tangnano_pruebas
   version: main

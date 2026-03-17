@@ -1,0 +1,7 @@
+//instalar docker compose
+
+//Ejecutar el dockerfile con compose
+docker compose up
+
+//abrir el contenedor
+docker compose run --rm tangnano-docker
