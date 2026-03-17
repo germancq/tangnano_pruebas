@@ -28,7 +28,7 @@ targets:
     flow_options:
       board: tangnano9k
     parameters:
-      - clk_freq_hz=27_000_000
+      - N=8
     toplevel: mux
   
   sim:
