@@ -1,0 +1,15 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1773426965" />
+    <testcase name="run_mux_test_001" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="0.00031566619873046875" sim_time_ns="10.0" ratio_time="31679.0332326284" />
+    <testcase name="run_mux_test_002" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="0.00011348724365234375" sim_time_ns="10.000000000000002" ratio_time="88115.63025210086" />
+    <testcase name="run_mux_test_003" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="9.608268737792969e-05" sim_time_ns="10.0" ratio_time="104077.02233250621" />
+    <testcase name="run_mux_test_004" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="9.1552734375e-05" sim_time_ns="10.0" ratio_time="109226.66666666667" />
+    <testcase name="run_mux_test_005" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="9.274482727050781e-05" sim_time_ns="10.0" ratio_time="107822.72493573265" />
+    <testcase name="run_mux_test_006" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="8.893013000488281e-05" sim_time_ns="10.0" ratio_time="112447.82841823057" />
+    <testcase name="run_mux_test_007" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="8.988380432128906e-05" sim_time_ns="10.0" ratio_time="111254.74801061008" />
+    <testcase name="run_mux_test_008" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="9.274482727050781e-05" sim_time_ns="10.0" ratio_time="107822.72493573265" />
+    <testcase name="run_mux_test_009" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="9.131431579589844e-05" sim_time_ns="10.0" ratio_time="109511.85378590078" />
+    <testcase name="run_mux_test_010" classname="test_mux" file="/home/germancq/gitProjects/microcredencial-fusesoc/solutions/venv/lib/python3.13/site-packages/cocotb/_test_factory.py" lineno="16" time="8.845329284667969e-05" sim_time_ns="10.0" ratio_time="113054.01617250674" />
+  </testsuite>
+</testsuites>

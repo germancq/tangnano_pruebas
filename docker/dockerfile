@@ -1,0 +1,57 @@
+FROM debian:bookworm
+
+WORKDIR /core
+
+ARG HOST_USER=germancq
+ENV HOST_USER_ENV=${HOST_USER}
+
+ARG PYTHON_VERSION=3.11
+
+ARG COCOTB_VERSION=2.0.1
+
+ARG NUMPY_VERSION=2.2.3
+
+ARG BITSTRING_VERSION=4.3.0
+
+ARG FUSESOC_VERSION=2.4.5
+
+ARG VERILATOR_VERSION=5.032
+
+ARG YOSYS_VERSION=0.61
+
+ARG APYCULA_VERSION=0.29
+
+ARG NEXTPNR_VERSION=nextpnr-0.9
+
+RUN apt-get update
+
+RUN apt-get install -y python${PYTHON_VERSION} python3 python3-venv python${PYTHON_VERSION}-venv build-essential python3-dev iverilog git flex bison help2man perl make autoconf
+
+RUN python3.11 -m venv /core/venv
+
+RUN . venv/bin/activate && pip install cocotb==${COCOTB_VERSION} bitstring==${BITSTRING_VERSION} fusesoc==${FUSESOC_VERSION} numpy==${NUMPY_VERSION} pytest
+
+RUN git clone https://github.com/germancq/tangnano_pruebas.git
+
+RUN . venv/bin/activate && fusesoc library add fusesoc_cores https://github.com/germancq/tangnano_pruebas.git
+
+RUN git clone https://github.com/verilator/verilator
+
+RUN unset VERILATOR_ROOT
+
+RUN cd verilator && git checkout v${VERILATOR_VERSION} && autoconf && ./configure && make -j$(nproc) && make install
+
+RUN echo 'export PATH="/usr/local:$PATH"' >> /root/.bashrc
+
+RUN apt-get install -y openfpgaloader cmake libboost-all-dev libeigen3-dev gawk git make python3 lld bison clang flex libffi-dev libfl-dev libreadline-dev pkg-config tcl-dev zlib1g-dev graphviz xdot neovim
+
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
+RUN cd /core && git clone --recurse-submodules --branch v${YOSYS_VERSION} https://github.com/YosysHQ/yosys.git && cd yosys && make -j$(nproc) && make install
+
+RUN . venv/bin/activate && pip install apycula==${APYCULA_VERSION}
+
+RUN . venv/bin/activate && cd /core && git clone --recurse-submodules --branch ${NEXTPNR_VERSION} https://github.com/YosysHQ/nextpnr.git && cd nextpnr && mkdir -p build && cd build && cmake .. -DARCH="himbaechel" -DHIMBAECHEL_UARCH="gowin" && make -j$(nproc) && make install
+
+CMD [ "bash" ]
+

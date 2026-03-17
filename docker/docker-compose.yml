@@ -1,0 +1,16 @@
+services:
+  tangnano-docker:
+    build:
+      context: .
+      args:
+        - HOST_USER=${USER:-mydefaultuser}
+    network_mode: host
+    image: tangnano-tools-image
+    privileged: true
+    user: "0:0"
+    volumes:
+      - ../shared:/core/shared_dir:rw,z
+    environment:
+      - HOST_USER_ENV=germancq
+    command: bash
+    working_dir: /core
